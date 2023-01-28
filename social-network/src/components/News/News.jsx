@@ -1,4 +1,4 @@
 const News = (props) => {
-  return <div>News</div>;
+  return <div></div>;
 };
 export default News;

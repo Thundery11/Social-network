@@ -10,9 +10,9 @@ const MyPosts = (props) => {
         <button>Remove</button>
       </div>
       <div className={s.posts}>
-        <Post />
-        <Post />
-        <Post />
+        <Post message="Hi how are u" />
+        <Post message="I`m fine, thanks" />
+        <Post message="Hi guys" />
       </div>
     </div>
   );

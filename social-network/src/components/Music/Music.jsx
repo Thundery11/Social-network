@@ -1,4 +1,4 @@
 const Music = (props) => {
-  return <div>Music</div>;
+  return <div></div>;
 };
 export default Music;

@@ -1,5 +1,5 @@
 const Dialogs = (props) => {
-  return <div> Dialogs</div>;
+  return <div> </div>;
 };
 
 export default Dialogs;
