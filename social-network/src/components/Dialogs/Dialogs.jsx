@@ -1,5 +1,6 @@
+import s from "./Dialogs.module.css";
 const Dialogs = (props) => {
-  return <div> </div>;
+  return <div>Dialogs</div>;
 };
 
 export default Dialogs;
