@@ -12,7 +12,7 @@ const MyPosts = (props) => {
           <textarea></textarea>
         </div>
         <div>
-          <button>Add post</button>
+          <button onClick={() => {}}>Add post</button>
         </div>
         <button>Remove</button>
       </div>
