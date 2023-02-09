@@ -9,9 +9,11 @@ const MyPosts = (props) => {
   let addPost = () => {
     let text = newPostElement.current.value;
     props.addPost(text);
-    newPostElement.current.value = "";
   };
-  let onPostChange = () => {};
+  let onPostChange = () => {
+    let text = newPostElement.current.value;
+    props.updateNewPostText(text);
+  };
   return (
     <div className={s.postsBlock}>
       <h3>My posts</h3>
