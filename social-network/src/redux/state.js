@@ -26,11 +26,16 @@ let store = {
       newMessageText: "Write here something",
     },
   },
-  rerenderEntireTree() {
+  getState() {
+    return this._state;
+  },
+
+  _callSubscriber() {
     console.log("state changed!");
   },
 
   addPost() {
+    debugger;
     let newPost = {
       message: this._state.profilePage.newPostText,
       id: 5,
@@ -38,27 +43,27 @@ let store = {
     };
     this._state.profilePage.posts.push(newPost);
     this._state.profilePage.newPostText = "";
-    this.rerenderEntireTree(state);
+    this._callSubscriber(this._state);
   },
   updateNewPostText(newText) {
-    state.profilePage.newPostText = newText;
-    rerenderEntireTree(state);
+    this._state.profilePage.newPostText = newText;
+    this._callSubscriber(this._state);
   },
   addMessage() {
     let newMessage = {
-      message: state.dialogsPage.newMessageText,
+      message: this._state.dialogsPage.newMessageText,
       id: 4,
     };
-    state.dialogsPage.messages.push(newMessage);
-    state.dialogsPage.newMessageText = " ";
-    rerenderEntireTree(state);
+    this._state.dialogsPage.messages.push(newMessage);
+    this._state.dialogsPage.newMessageText = " ";
+    this._callSubscriber(this._state);
   },
   updateNewMessageText(newMessage) {
-    state.dialogsPage.newMessageText = newMessage;
-    rerenderEntireTree(state);
+    this._state.dialogsPage.newMessageText = newMessage;
+    this._callSubscriber(this._state);
   },
   subscribe(observer) {
-    rerenderEntireTree = observer;
+    this._callSubscriber = observer;
   },
 };
 
