@@ -34,21 +34,20 @@ let store = {
     console.log("state changed!");
   },
 
-  addPost() {
-    debugger;
-    let newPost = {
-      message: this._state.profilePage.newPostText,
-      id: 5,
-      likesCount: 32,
-    };
-    this._state.profilePage.posts.push(newPost);
-    this._state.profilePage.newPostText = "";
-    this._callSubscriber(this._state);
-  },
-  updateNewPostText(newText) {
-    this._state.profilePage.newPostText = newText;
-    this._callSubscriber(this._state);
-  },
+  // addPost() {
+  //   let newPost = {
+  //     message: this._state.profilePage.newPostText,
+  //     id: 5,
+  //     likesCount: 32,
+  //   };
+  //   this._state.profilePage.posts.push(newPost);
+  //   this._state.profilePage.newPostText = "";
+  //   this._callSubscriber(this._state);
+  // },
+  // updateNewPostText(newText) {
+  //   this._state.profilePage.newPostText = newText;
+  //   this._callSubscriber(this._state);
+  // },
   addMessage() {
     let newMessage = {
       message: this._state.dialogsPage.newMessageText,
@@ -64,6 +63,21 @@ let store = {
   },
   subscribe(observer) {
     this._callSubscriber = observer;
+  },
+  dispatch(action) {
+    if (action.type === "ADD-POST") {
+      let newPost = {
+        message: this._state.profilePage.newPostText,
+        id: 5,
+        likesCount: 32,
+      };
+      this._state.profilePage.posts.push(newPost);
+      this._state.profilePage.newPostText = "";
+      this._callSubscriber(this._state);
+    } else if (action.type === "UPDATE-NEW-POST-TEXT") {
+      this._state.profilePage.newPostText = action.newText;
+      this._callSubscriber(this._state);
+    }
   },
 };
 
