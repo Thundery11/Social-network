@@ -33,7 +33,7 @@ let store = {
   _callSubscriber() {
     console.log("state changed!");
   },
-
+  //state changded
   // addPost() {
   //   let newPost = {
   //     message: this._state.profilePage.newPostText,
