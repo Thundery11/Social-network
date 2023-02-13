@@ -26,7 +26,6 @@ const Dialogs = (props) => {
     let text = newMessageElement.current.value;
     props.dispatch(onMessageChangeActionCreator(text));
   };
-  //gg
 
   return (
     <div className={s.dialogs}>
