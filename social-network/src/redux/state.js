@@ -1,3 +1,5 @@
+const ADD_POST = "ADD-POST";
+
 let store = {
   _state: {
     profilePage: {
@@ -65,7 +67,7 @@ let store = {
     this._callSubscriber = observer;
   },
   dispatch(action) {
-    if (action.type === "ADD-POST") {
+    if (action.type === ADD_POST) {
       let newPost = {
         message: this._state.profilePage.newPostText,
         id: 5,
