@@ -3,7 +3,7 @@ import Settings from "./components/Settings/Settings";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
-import Dialogs from "./components/Dialogs/Dialogs";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -18,12 +18,7 @@ const App = (props) => {
             <Route path="/profile" element={<Profile store={props.store} />} />
             <Route
               path="/dialogs/*"
-              element={
-                <Dialogs
-                  state={props.state.dialogsPage}
-                  dispatch={props.dispatch}
-                />
-              }
+              element={<DialogsContainer store={props.store} />}
             />
             <Route path="/music" element={<Music />} />
             <Route path="/news" element={<News />} />

@@ -1,30 +1,25 @@
-import { NavLink } from "react-router-dom";
 import DialogItem from "./DialogItem/DialogItem";
 import s from "./Dialogs.module.css";
 import Message from "./Message/Message";
 import React from "react";
-import {
-  addMessageActionCreator,
-  onMessageChangeActionCreator,
-} from "../../redux/dialogs-reducer";
 
 const Dialogs = (props) => {
-  let dialogsElements = props.state.dialogs.map((d) => (
+  let dialogsElements = props.dialogs.map((d) => (
     <DialogItem name={d.name} id={d.id} />
   ));
 
-  let messagesElements = props.state.messages.map((m) => (
+  let messagesElements = props.messages.map((m) => (
     <Message message={m.message} id={m.id} />
   ));
 
   let newMessageElement = React.createRef();
 
-  let addMessage = () => {
-    props.dispatch(addMessageActionCreator());
+  let onAddMessage = () => {
+    props.addMessage();
   };
   let onMessageChange = () => {
     let text = newMessageElement.current.value;
-    props.dispatch(onMessageChangeActionCreator(text));
+    props.onMessageChange(text);
   };
 
   return (
@@ -36,11 +31,11 @@ const Dialogs = (props) => {
           <textarea
             ref={newMessageElement}
             onChange={onMessageChange}
-            value={props.state.newMessageText}
+            value={props.newMessageText}
           ></textarea>
         </div>
         <div>
-          <button onClick={addMessage}>Add message</button>
+          <button onClick={onAddMessage}>Add message</button>
         </div>
         <button>Remove</button>
       </div>
