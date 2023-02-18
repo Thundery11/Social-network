@@ -4,11 +4,11 @@ import Message from "./Message/Message";
 import React from "react";
 
 const Dialogs = (props) => {
-  let dialogsElements = props.dialogs.map((d) => (
+  let dialogsElements = props.dialogsPage.dialogs.map((d) => (
     <DialogItem name={d.name} id={d.id} />
   ));
 
-  let messagesElements = props.messages.map((m) => (
+  let messagesElements = props.dialogsPage.messages.map((m) => (
     <Message message={m.message} id={m.id} />
   ));
 
@@ -31,7 +31,7 @@ const Dialogs = (props) => {
           <textarea
             ref={newMessageElement}
             onChange={onMessageChange}
-            value={props.newMessageText}
+            value={props.dialogsPage.newMessageText}
           ></textarea>
         </div>
         <div>
