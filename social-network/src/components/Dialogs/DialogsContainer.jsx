@@ -6,24 +6,6 @@ import {
 } from "../../redux/dialogs-reducer";
 import Dialogs from "./Dialogs";
 
-// const DialogsContainer = (props) => {
-//   let state = props.store.getState();
-
-//   let addMessage = () => {
-//     props.store.dispatch(addMessageActionCreator());
-//   };
-//   let onMessageChange = (text) => {
-//     props.store.dispatch(onMessageChangeActionCreator(text));
-//   };
-
-//   return (
-//     <Dialogs
-//       dialogsPage={state.dialogsPage}
-//       addMessage={addMessage}
-//       onMessageChange={onMessageChange}
-//     />
-//   );
-// };
 let mapStateToProps = (state) => {
   return {
     dialogsPage: state.dialogsPage,
