@@ -9,6 +9,8 @@ let initialState = {
       fullName: "Illia",
       status: "I`m starting developer",
       location: { city: "Mogilev", county: "Belarus" },
+      photoUrl:
+        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hockeydb.com%2Fihdb%2Fstats%2Fpdisplay.php%3Fpid%3D56745&psig=AOvVaw3hOeA3wqpK14c8JpCAiSMi&ust=1677062297583000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLjVgoe2pv0CFQAAAAAdAAAAABAE",
       followed: true,
     },
     {
@@ -16,6 +18,8 @@ let initialState = {
       fullName: "Katya",
       status: "I`m girl",
       location: { city: "Mogilev", county: "Belarus" },
+      photoUrl:
+        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FAlexander_Lukashenko&psig=AOvVaw26zHE8Ym4g35PrPP3aISRl&ust=1677062869603000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNjHzJe4pv0CFQAAAAAdAAAAABAE",
       followed: true,
     },
     {
@@ -23,6 +27,8 @@ let initialState = {
       fullName: "Denis",
       status: "developer",
       location: { city: "Mogilev", county: "Belarus" },
+      photoUrl:
+        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hockeydb.com%2Fihdb%2Fstats%2Fpdisplay.php%3Fpid%3D56745&psig=AOvVaw3hOeA3wqpK14c8JpCAiSMi&ust=1677062297583000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLjVgoe2pv0CFQAAAAAdAAAAABAE",
       followed: false,
     },
     {
@@ -30,6 +36,8 @@ let initialState = {
       fullName: "Sasha",
       status: "basketball player",
       location: { city: "Mogilev", county: "Belarus" },
+      photoUrl:
+        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hockeydb.com%2Fihdb%2Fstats%2Fpdisplay.php%3Fpid%3D56745&psig=AOvVaw3hOeA3wqpK14c8JpCAiSMi&ust=1677062297583000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLjVgoe2pv0CFQAAAAAdAAAAABAE",
       followed: true,
     },
     {
@@ -40,7 +48,6 @@ let initialState = {
       followed: true,
     },
   ],
-  newPostText: "Hi, my friend!",
 };
 
 const usersReducer = (state = initialState, action) => {
