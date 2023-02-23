@@ -42,7 +42,7 @@ class Users extends React.Component {
                   this.onPageChanged(p);
                 }}
               >
-                {p}
+                {`${p}  `}
               </span>
             );
           })}
