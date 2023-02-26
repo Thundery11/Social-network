@@ -84,6 +84,4 @@ export const setTotalUsersCountAC = (totalUserscount) => {
   };
 };
 
-//Это пиздец
-
 export default usersReducer;
