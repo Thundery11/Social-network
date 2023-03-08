@@ -23,12 +23,7 @@ const usersReducer = (state = initialState, action) => {
           return u;
         }),
       };
-    // let stateCopy = {...state};
-    // stateCopy.users = [...state.users.map(u =>{
-    //     if(u.id === action.userID){
-    //         return(...u, followed: true)
-    //     }
-    // })]
+
     case UNFOLLOW:
       return {
         ...state,
