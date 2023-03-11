@@ -5,6 +5,7 @@ import {
   setUsersAC,
   setCurrentPageAC,
   setTotalUsersCountAC,
+  toggleIsFetchingAC,
 } from "../../redux/users-reducer";
 import React from "react";
 import axios from "axios";
@@ -13,22 +14,26 @@ import preloader from "./../../assets/images/preloader.svg";
 
 class UsersContainer extends React.Component {
   componentDidMount() {
+    this.props.toggleIsFetching(true);
     axios
       .get(
         `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`
       )
       .then((response) => {
+        this.props.toggleIsFetching(false);
         this.props.setUsers(response.data.items);
         this.props.setTotalUsersCount(response.data.totalCount);
       });
   }
   onPageChanged = (pageNumber) => {
+    this.props.toggleIsFetching(true);
     this.props.setCurrentPage(pageNumber);
     axios
       .get(
         `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`
       )
       .then((response) => {
+        this.props.toggleIsFetching(false);
         this.props.setUsers(response.data.items);
       });
   };
@@ -78,6 +83,9 @@ let mapDispatchToProps = (dispatch) => {
     },
     setTotalUsersCount: (totalCount) => {
       dispatch(setTotalUsersCountAC(totalCount));
+    },
+    toggleIsFetching: (isFetching) => {
+      dispatch(toggleIsFetchingAC(isFetching));
     },
   };
 };
