@@ -6,5 +6,5 @@ let Preloader = (props) => {
     </div>
   );
 };
-//nichego sdela=no ne bylo :(
+
 export default Preloader;
