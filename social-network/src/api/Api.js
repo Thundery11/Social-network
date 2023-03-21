@@ -30,8 +30,11 @@ export const userProfileAPI = {
   },
 };
 
-export const unFollowAPI = {
+export const FollowAPI = {
   unFollow(id) {
     return instance.delete(`follow/${id}`).then((response) => response.data);
+  },
+  follow(id) {
+    return instance.post(`follow/${id}`).then((response) => response.data);
   },
 };
