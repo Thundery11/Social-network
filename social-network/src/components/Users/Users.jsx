@@ -19,7 +19,7 @@ let Users = (props) => {
               props.onPageChanged(p);
             }}
           >
-            {`${p}  `}
+            {p}
           </span>
         ))}
       </div>
