@@ -16,6 +16,12 @@ export const usersAPI = {
         return response.data;
       });
   },
+  unFollow(id) {
+    return instance.delete(`follow/${id}`).then((response) => response.data);
+  },
+  follow(id) {
+    return instance.post(`follow/${id}`).then((response) => response.data);
+  },
 };
 
 export const authAPI = {
@@ -30,11 +36,11 @@ export const userProfileAPI = {
   },
 };
 
-export const FollowAPI = {
-  unFollow(id) {
-    return instance.delete(`follow/${id}`).then((response) => response.data);
-  },
-  follow(id) {
-    return instance.post(`follow/${id}`).then((response) => response.data);
-  },
-};
+// export const FollowAPI = {
+//   unFollow(id) {
+//     return instance.delete(`follow/${id}`).then((response) => response.data);
+//   },
+//   follow(id) {
+//     return instance.post(`follow/${id}`).then((response) => response.data);
+//   },
+// };

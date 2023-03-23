@@ -3,7 +3,6 @@ import {
   unFollow,
   follow,
   setCurrentPage,
-  toggleFollowingProgress,
   getUsers,
 } from "../../redux/users-reducer";
 import React from "react";
@@ -84,6 +83,5 @@ export default connect(mapStateToProps, {
   unFollow,
   follow,
   setCurrentPage,
-  toggleFollowingProgress,
   getUsers,
 })(UsersContainer);

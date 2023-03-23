@@ -1,7 +1,6 @@
 import s from "./Users.module.css";
 import userPhoto from "../../assets/images/default-user.jpg";
 import { NavLink } from "react-router-dom";
-import { FollowAPI } from "../../api/Api";
 
 let Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -40,14 +39,14 @@ let Users = (props) => {
                 <button
                   disabled={props.followingProgress.some((id) => id === u.id)}
                   onClick={() => {
-                    debugger;
-                    props.toggleFollowingProgress(true, u.id);
-                    FollowAPI.unFollow(u.id).then((data) => {
-                      if (data.resultCode === 0) {
-                        props.unFollow(u.id);
-                      }
-                      props.toggleFollowingProgress(false, u.id);
-                    });
+                    props.unFollow(u.id);
+                    // props.toggleFollowingProgress(true, u.id);
+                    // usersAPI.unFollow(u.id).then((data) => {
+                    //   if (data.resultCode === 0) {
+                    //     props.unFollow(u.id);
+                    //   }
+                    //   props.toggleFollowingProgress(false, u.id);
+                    // });
                   }}
                 >
                   Unfollow
@@ -56,13 +55,14 @@ let Users = (props) => {
                 <button
                   disabled={props.followingProgress.some((id) => id === u.id)}
                   onClick={() => {
-                    props.toggleFollowingProgress(true, u.id);
-                    FollowAPI.follow(u.id).then((data) => {
-                      if (data.resultCode === 0) {
-                        props.follow(u.id);
-                      }
-                      props.toggleFollowingProgress(false, u.id);
-                    });
+                    props.follow(u.id);
+                    // props.toggleFollowingProgress(true, u.id);
+                    // usersAPI.follow(u.id).then((data) => {
+                    //   if (data.resultCode === 0) {
+                    //     props.follow(u.id);
+                    //   }
+                    //   props.toggleFollowingProgress(false, u.id);
+                    // });
                   }}
                 >
                   Follow
