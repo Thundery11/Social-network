@@ -34,6 +34,16 @@ export const userProfileAPI = {
   setUserProfile(userId = 28039) {
     return instance.get(`profile/${userId}`).then((response) => response.data);
   },
+  updateStatus(status) {
+    return instance
+      .put(`/profile/status`, { status: status })
+      .then((responce) => responce.data);
+  },
+  getStatus(userId) {
+    return instance
+      .get(`/profile/status/` + userId)
+      .then((responce) => responce.data);
+  },
 };
 
 // export const FollowAPI = {
