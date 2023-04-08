@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import {
   addPostActionCreator,
@@ -16,8 +15,8 @@ let mapDispatchToProps = (dispatch) => {
     updateNewPostText: (text) => {
       dispatch(updateNewPostTextActionCreator(text));
     },
-    addPost: () => {
-      dispatch(addPostActionCreator());
+    addPost: (newPostBody) => {
+      dispatch(addPostActionCreator(newPostBody));
     },
   };
 };

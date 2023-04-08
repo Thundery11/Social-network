@@ -1,6 +1,26 @@
+import { Field, reduxForm } from "redux-form";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import React from "react";
+
+const MyPostsForm = (props) => {
+  return (
+    <form onSubmit={props.handleSubmit}>
+      <div>
+        <Field
+          name="newPostBody"
+          component="textarea"
+          placeholder="write here"
+        />
+      </div>
+      <div>
+        <button>Add post</button>
+      </div>
+    </form>
+  );
+};
+
+const MyPostReduxForm = reduxForm({ form: "forAddPostsForm" })(MyPostsForm);
 
 const MyPosts = (props) => {
   let postsElements = props.profilePage.posts.map((p) => (
@@ -13,6 +33,10 @@ const MyPosts = (props) => {
   let onPostChange = () => {
     let text = newPostElement.current.value;
     props.updateNewPostText(text);
+  };
+
+  let addNewPost = (values) => {
+    props.addPost(values.newPostBody);
   };
 
   return (
@@ -30,6 +54,7 @@ const MyPosts = (props) => {
           <button onClick={onAddPost}>Add post</button>
         </div>
         <button>Remove</button>
+        <MyPostReduxForm onSubmit={addNewPost} />
       </div>
       <div className={s.posts}>{postsElements}</div>
     </div>
