@@ -4,14 +4,18 @@ import s from "./Dialogs.module.css";
 import Message from "./Message/Message";
 import React from "react";
 import { Navigate } from "react-router-dom";
+import { Textarea } from "../common/FormsControls/FormsControls";
+import { maxLengthCreator, requiered } from "../../utils/validators/validators";
 
+const maxLength = maxLengthCreator(50);
 const DialogsForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
       <div>
         <Field
           name="newMesageBody"
-          component={"textarea"}
+          component={Textarea}
+          validate={[requiered, maxLength]}
           placeholder="Enter your message"
         />
       </div>
