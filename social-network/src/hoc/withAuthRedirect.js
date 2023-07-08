@@ -19,4 +19,3 @@ export const withAuthRedirect = (Component) => {
   );
   return ConnectedAuthRedirectComponent;
 };
-ss;
